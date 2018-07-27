@@ -4,7 +4,7 @@ package com.test;
 import org.apache.commons.collections.Predicate;
 
 class Project {
-#add some comment in the code
+//add some comment in the code
   public static void test() {
     System.out.println("test");
   }
