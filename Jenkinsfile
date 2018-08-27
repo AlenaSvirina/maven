@@ -1,6 +1,6 @@
 node {
     stage('Preparation (Checking out)') {
-        git branch: 'master': 'https://github.com/AlenaSvirina/maven'
+        git branch: 'master', url: 'https://github.com/AlenaSvirina/maven'
     }
     stage('Building code') {
         withMaven {
