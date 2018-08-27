@@ -11,13 +11,13 @@ node {
     withMaven {
         parallel(
                 'pre-integration-test': {
-                    sh "mvn pre-integration-test"
+                    sh "mvn -f pre-integration-test"
                 },
                 'integration-test': {
-                    sh "mvn integration-test"
+                    sh "mvn -f integration-test"
                 },
                 'post-integration-test': {
-                    sh "mvn post-integration-test"
+                    sh "mvn -f post-integration-test"
                 }
         )
     }
