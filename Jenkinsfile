@@ -4,20 +4,20 @@ node {
     }
     stage('Building code') {
         withMaven {
-            sh "mvn ./pom.xml package"
+            sh "mvn package"
         }
     }
     stage("Testing")
     withMaven {
         parallel(
                 'pre-integration-test': {
-                    sh "mvn -f ./pom.xml pre-integration-test"
+                    sh "mvn pre-integration-test"
                 },
                 'integration-test': {
-                    sh "mvn -f ./pom.xml integration-test"
+                    sh "mvn integration-test"
                 },
                 'post-integration-test': {
-                    sh "mvn -f ./pom.xml post-integration-test"
+                    sh "mvn post-integration-test"
                 }
         )
     }
